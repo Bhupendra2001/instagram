@@ -1,13 +1,13 @@
 'use client'
-import Sidebar from "@/components/Sidebar";
-import Navbar from "@/components/Navbar";
-import Posts from "@/components/Posts";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import Posts from '@/components/Posts'
+import Sidebar from '@/components/Sidebar'
+import React from 'react'
 import {AuthContext} from '@/context/AuthContext'
 import { useContext  } from "react";
 import { useRouter } from "next/navigation";
-
-interface AuthUser {
+interface currentUser {
   uid?: string;
   email?: string | null;
   name?: string | null;
@@ -16,8 +16,7 @@ interface AuthUser {
 }
 
 
-
-export default function Home() {
+const page = () => {
   const { currentUser } = useContext(AuthContext);
    const router = useRouter()
 
@@ -36,5 +35,7 @@ export default function Home() {
         </div>
       </div>
     </main>
-  );
+  )
 }
+
+export default page
